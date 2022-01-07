@@ -69,24 +69,8 @@ def Housing():
             outfile.write(filebytes_housing.getbuffer())
 
     @task()
-    def download_maps():
-       ##download do zip com o csv
-        url = "https://github.com/ozeiasgodoy/notebooks/blob/main/dados/countyl010g_shp_nt00964.zip?raw=true"
-
-        filebytes_maps = BytesIO(
-            requests.get(url).content
-        )
-        with open("data/housing/maps.zip", "wb") as outfile:
-            outfile.write(filebytes_maps.getbuffer())
-
-    @task()
     def extract_housing_file():
         myzip = zipfile.ZipFile("data/housing/housing.zip")
-        myzip.extractall('data/housing')
-
-    @task()
-    def extract_maps():
-        myzip = zipfile.ZipFile("data/housing/maps.zip",)
         myzip.extractall('data/housing')
 
     @task()
