@@ -15,9 +15,6 @@ import requests
 from io import BytesIO
 import os
 
-import matplotlib.pyplot as plt
-import seaborn as sns
-
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import KFold, cross_val_predict, cross_val_score
